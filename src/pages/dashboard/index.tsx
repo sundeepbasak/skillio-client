@@ -2,6 +2,32 @@ import { getCourseData } from "../../apis";
 import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
+import { Carousel } from "flowbite-react";
+
+import Img1 from "../../assets/c1.jpg";
+import Img2 from "../../assets/c2.jpg";
+import Img3 from "../../assets/c3.jpg";
+import Img4 from "../../assets/c4.jpg";
+
+const CarouselImg = [
+  {
+    id: 1,
+    img: Img1,
+  },
+  {
+    id: 2,
+    img: Img2,
+  },
+  {
+    id: 3,
+    img: Img3,
+  },
+  {
+    id: 4,
+    img: Img4,
+  },
+];
+
 const marqueeData = [
   "sale",
   "sale",
@@ -91,7 +117,19 @@ const index = () => {
     <>
       <div className="flex flex-col gap-2 p-2 h-screen ">
         <div className=" h-2/6 border border-cyan-600 w-full">
-          <h1>carousel</h1>
+          {/* <Carousel />
+           */}
+
+          <Carousel slideInterval={3000}>
+            <img src={Img1} className="h-full " />
+            <img src={Img2} className="h-full " />
+            <img src={Img3} className="h-full " />
+            <img src={Img4} className="h-full " />
+
+            {/* {CarouselImg.map((item) => {
+              return <img src={item.img} className="h-full " />;
+            })} */}
+          </Carousel>
         </div>
         <div className="flex self-center h-2/8 w-4/5  ">
           <div className="flex justify-center  items-center flex-col gap-2 w-1/5 ">

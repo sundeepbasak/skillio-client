@@ -1,7 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "./components/logoContainer/index";
 import Searchbar from "./components/searchbar/index";
-import { BiSearchAlt } from "react-icons/bi";
 import Categories from "./components/CategoriesModal/index";
 
 const elements = [
@@ -31,17 +30,6 @@ const index = () => {
         <div className=" flex items-center w-4/6 ml-2 ">
           <Searchbar />
         </div>
-        {/* <div className=" flex items-center w-1/6 justify-around">
-          {elements.map((element) => {
-            return (
-              <NavLink to={element.link}>
-                <h1 className="text-l font-bold text-green-900">
-                  {element.name}
-                </h1>
-              </NavLink>
-            );
-          })}
-        </div> */}
 
         <div className=" w-1/6 flex items-center justify-around">
           <Link to={"login"}>

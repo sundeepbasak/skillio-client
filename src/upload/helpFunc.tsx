@@ -7,23 +7,10 @@ interface IFile {
   webkitRelativePath: string;
 }
 
-import { useEffect, useState } from "react";
-
 let toBeUploaded = [] as IFile[];
 let doneUploading = [] as IFile[];
 
 export const UploadFileQueue = (data: IFile[]) => {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    if (toBeUploaded.length > 0) {
-      toBeUploaded.forEach((file) => {
-        console.log(file, "file");
-        // upload(file);
-      });
-    }
-  }, [toBeUploaded]);
-
   function enqueue(data: IFile) {
     return toBeUploaded.push(data);
   }
@@ -34,7 +21,8 @@ export const UploadFileQueue = (data: IFile[]) => {
     }, 1000);
   }
 
-  // function dequeue() {
-  //   return toBeUploaded.shift();
-  // }
+  toBeUploaded.forEach((item: any) => {
+    const buffer = new ArrayBuffer(item);
+    console.log(buffer.toString());
+  });
 };
